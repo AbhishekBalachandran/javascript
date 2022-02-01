@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Signup|</title>
+	<link rel="stylesheet" href="../files/bootstrap.min.css">
+	<script src="../files/jquery.min.js"></script>
+	<script src="../files/popper.min.js"></script>
+	<script src="../files/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+		<h1 class="text-center mt-4">Signup</h1>
+	<hr>
+	<div>
+		<form class="form" name="form" method="post" id="form">
+		<label for="name">Name : </label>
+		<input type="text" id="name" name="name" class="form-control"><br>
+		<label for="email">Email : </label>
+		<input type="text" id="email" name="name" class="form-control"><br>
+		<label for="phno">Phone Number : </label>
+		<input type="text" id="phno" class="form-control"><br>
+		<label for="psd">Password : </label>
+		<input type="password" id="psd" name="password" class="form-control"><br>
+			<br>
+		<button class="btn btn-outline-dark" id="submit" onClick="validate()">Login</button>
+		</form>
+	</div>
+	</div>	
+	
+	<script>
+		function validate() {
+			let name = document.getElementById("name").value;
+			let email = document.getElementById("email").value;
+			let phno = document.getElementById("phno").value;
+			let psd = document.getElementById("psd").value;
+			
+			if (name.length < 3)
+                alert("Please enter a  valid name");
+			if (!(/[a-zA-Z]/.test(name)))
+				alert("Please enter a valid name")
+			 if (!(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(email)))
+                alert("Please enter a valid email");
+            if (!(/^\d{10}$/.test(phno)))
+                alert("Please enter a valid phone number");
+            if (psd.length < 6)
+                alert("Please enter a valid password");  
+		}
+	</script>
+</body>
+</html>
